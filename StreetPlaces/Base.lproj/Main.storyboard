@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Street Places-->
         <scene sceneID="Mh9-g9-hSW">
             <objects>
                 <tableViewController id="ae0-Th-Ixb" customClass="MainViewController" customModule="StreetPlaces" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <outlet property="delegate" destination="ae0-Th-Ixb" id="2On-pa-EVM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="sKi-7z-ohr"/>
+                    <navigationItem key="navigationItem" title="Street Places" id="sKi-7z-ohr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19v-Px-B0i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,6 +43,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vxw-OQ-7Zg">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="40"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="ae0-Th-Ixb" kind="relationship" relationship="rootViewController" id="QOS-rc-CdT"/>
