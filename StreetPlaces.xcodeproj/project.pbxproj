@@ -14,6 +14,7 @@
 		C0353C4B2921860A00C7FF91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0353C492921860A00C7FF91 /* Main.storyboard */; };
 		C0353C4D2921860B00C7FF91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0353C4C2921860B00C7FF91 /* Assets.xcassets */; };
 		C0353C502921860B00C7FF91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0353C4E2921860B00C7FF91 /* LaunchScreen.storyboard */; };
+		C0400A97294537C100537BAD /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0400A96294537C100537BAD /* NewPlaceViewController.swift */; };
 		C049CBFB293A21E7005FA1EE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049CBFA293A21E7005FA1EE /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		C0353C4C2921860B00C7FF91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0353C4F2921860B00C7FF91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0353C512921860B00C7FF91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0400A96294537C100537BAD /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		C049CBFA293A21E7005FA1EE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,6 +46,7 @@
 		C0353C372921860A00C7FF91 = {
 			isa = PBXGroup;
 			children = (
+				C0400A96294537C100537BAD /* NewPlaceViewController.swift */,
 				C0353C422921860A00C7FF91 /* StreetPlaces */,
 				C0353C412921860A00C7FF91 /* Products */,
 			);
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0353C442921860A00C7FF91 /* AppDelegate.swift in Sources */,
+				C0400A97294537C100537BAD /* NewPlaceViewController.swift in Sources */,
 				C0353C462921860A00C7FF91 /* SceneDelegate.swift in Sources */,
 				C0352DAC293A801800D32750 /* PlaceModel.swift in Sources */,
 				C049CBFB293A21E7005FA1EE /* CustomTableViewCell.swift in Sources */,
