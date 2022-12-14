@@ -46,7 +46,6 @@
 		C0353C372921860A00C7FF91 = {
 			isa = PBXGroup;
 			children = (
-				C0400A96294537C100537BAD /* NewPlaceViewController.swift */,
 				C0353C422921860A00C7FF91 /* StreetPlaces */,
 				C0353C412921860A00C7FF91 /* Products */,
 			);
@@ -64,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				C0353C432921860A00C7FF91 /* AppDelegate.swift */,
+				C0400A96294537C100537BAD /* NewPlaceViewController.swift */,
 				C0330730292241C300A65046 /* MainViewController.swift */,
 				C0352DAB293A801800D32750 /* PlaceModel.swift */,
 				C049CBFA293A21E7005FA1EE /* CustomTableViewCell.swift */,

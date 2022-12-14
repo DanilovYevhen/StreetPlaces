@@ -22,22 +22,26 @@ class NewPlaceViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt IndexPath: IndexPath) {
         
         if IndexPath.row == 0 {
-            let actionSheet = UIAlertController(title: nil,
-                                                message: nil,
-                                                preferredStyle: .actionSheet)
+            let cameraIcon = UIImage(named: "camera")
+            let photoIcon = UIImage(named: "photo")
+            let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let camera = UIAlertAction(title: "Camera", style: .default) { _ in
                 self.chooseImagePicker(sours: .camera)
             }
+            camera.setValue(cameraIcon, forKey: "image")
+            camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
             let photo = UIAlertAction(title: "Photo", style: .default) { _ in
                 self.chooseImagePicker(sours: .photoLibrary)
             }
+            photo.setValue(photoIcon, forKey: "image")
+            photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
             let cancel = UIAlertAction(title: "Cancel", style: .cancel)
             actionSheet.addAction(camera)
             actionSheet.addAction(photo)
             actionSheet.addAction(cancel)
             present(actionSheet, animated: true)
-            } else {
-                view.endEditing(true)
+        } else {
+            view.endEditing(true)
             }
         }
 }
