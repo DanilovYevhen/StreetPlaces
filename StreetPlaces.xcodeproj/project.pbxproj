@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		499AB6C09F75E49B985E1408 /* Pods_StreetPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B51D436428A9CCE20C73D3 /* Pods_StreetPlaces.framework */; };
 		C0330731292241C300A65046 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0330730292241C300A65046 /* MainViewController.swift */; };
 		C0352DAC293A801800D32750 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0352DAB293A801800D32750 /* PlaceModel.swift */; };
 		C0353C442921860A00C7FF91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0353C432921860A00C7FF91 /* AppDelegate.swift */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09B51D436428A9CCE20C73D3 /* Pods_StreetPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreetPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1923D54D813BB56421C5D55D /* Pods-StreetPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetPlaces.debug.xcconfig"; path = "Target Support Files/Pods-StreetPlaces/Pods-StreetPlaces.debug.xcconfig"; sourceTree = "<group>"; };
+		633CA1A1B83BFEFBB33DC2CA /* Pods-StreetPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetPlaces.release.xcconfig"; path = "Target Support Files/Pods-StreetPlaces/Pods-StreetPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		C0330730292241C300A65046 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C0352DAB293A801800D32750 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		C0353C402921860A00C7FF91 /* StreetPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499AB6C09F75E49B985E1408 /* Pods_StreetPlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7961F292A603F6AACBFBE2CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09B51D436428A9CCE20C73D3 /* Pods_StreetPlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A1A3BD0919A5C7F4C8FDEA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1923D54D813BB56421C5D55D /* Pods-StreetPlaces.debug.xcconfig */,
+				633CA1A1B83BFEFBB33DC2CA /* Pods-StreetPlaces.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C0353C372921860A00C7FF91 = {
 			isa = PBXGroup;
 			children = (
 				C0353C422921860A00C7FF91 /* StreetPlaces */,
 				C0353C412921860A00C7FF91 /* Products */,
+				7A1A3BD0919A5C7F4C8FDEA4 /* Pods */,
+				7961F292A603F6AACBFBE2CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0353C542921860B00C7FF91 /* Build configuration list for PBXNativeTarget "StreetPlaces" */;
 			buildPhases = (
+				075A8A4B4262376B913EF814 /* [CP] Check Pods Manifest.lock */,
 				C0353C3C2921860A00C7FF91 /* Sources */,
 				C0353C3D2921860A00C7FF91 /* Frameworks */,
 				C0353C3E2921860A00C7FF91 /* Resources */,
+				B1A593AFE74438DA551C4500 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +167,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		075A8A4B4262376B913EF814 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StreetPlaces-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1A593AFE74438DA551C4500 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StreetPlaces/Pods-StreetPlaces-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StreetPlaces/Pods-StreetPlaces-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StreetPlaces/Pods-StreetPlaces-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C0353C3C2921860A00C7FF91 /* Sources */ = {
@@ -294,6 +362,7 @@
 		};
 		C0353C552921860B00C7FF91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1923D54D813BB56421C5D55D /* Pods-StreetPlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +375,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,6 +391,7 @@
 		};
 		C0353C562921860B00C7FF91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 633CA1A1B83BFEFBB33DC2CA /* Pods-StreetPlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -333,6 +404,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
