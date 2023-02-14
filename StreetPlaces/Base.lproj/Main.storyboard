@@ -146,6 +146,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="hWp-hy-imN">
+                                        <rect key="frame" x="0.0" y="525" width="375" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hWp-hy-imN" id="fhS-s0-eMU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="251.99999999999997" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="APq-gB-Yqa" customClass="RatingControl" customModule="StreetPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="61.666666666666657" y="48" width="251.99999999999997" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="APq-gB-Yqa" firstAttribute="centerY" secondItem="fhS-s0-eMU" secondAttribute="centerY" id="dQ0-X1-ydw"/>
+                                                <constraint firstItem="APq-gB-Yqa" firstAttribute="centerX" secondItem="fhS-s0-eMU" secondAttribute="centerX" id="tlW-et-drH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -335,6 +352,11 @@
             <point key="canvasLocation" x="-329" y="663"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="APq-gB-Yqa">
+            <size key="intrinsicContentSize" width="251.99999999999997" height="44"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="aNV-uh-YBU"/>
     </inferredMetricsTieBreakers>
