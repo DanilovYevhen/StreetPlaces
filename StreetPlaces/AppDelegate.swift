@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }                
             })
         Realm.Configuration.defaultConfiguration = config
-        // Override point for customization after application launch.
+        
         return true
     }
 
