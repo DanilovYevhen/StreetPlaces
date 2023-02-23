@@ -7,23 +7,43 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     
     var place: Place!
-let annotationIdentifier = "annotationIdentifier"
+    let annotationIdentifier = "annotationIdentifier"
+    let locationManager = CLLocationManager()
+    let regionInMeters = 10_000.00
+    var incomeSegueIdentifier = ""
+    
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapPinImage: UIImageView!
+    @IBOutlet var adressLabel: UILabel!
+    @IBOutlet var doneButton: UIButton!
     
     override func viewDidLoad() {
         mapView.delegate = self
         super.viewDidLoad()
-        setupPlacemark()
+        setupMapView()
+        checkLocationServices()
     }
-    
+    @IBAction func centerViewInUserLocation() {
+        showUserLocation()
+    }
+    @IBAction func doneButtonPressed() {
+    }
     @IBAction func closeVC() {
         dismiss(animated: true)
     }
-    
+    private func setupMapView() {
+        if incomeSegueIdentifier == "showMap" {
+            setupPlacemark()
+            mapPinImage.isHidden = true
+            adressLabel.isHidden = true
+            doneButton.isHidden = true  
+        }
+    }
     private func setupPlacemark() {
         guard let location = place.location else { return }
         let geocoder = CLGeocoder()
@@ -43,7 +63,59 @@ let annotationIdentifier = "annotationIdentifier"
             self.mapView.showAnnotations([annotation], animated: true)
             self.mapView.selectAnnotation(annotation, animated: true)
         }
+    }
+    
+    private func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            
+            setupLocationManager()
+            checkLocationAuthorization()
+            
+        } else {
+            //
+        }
+    }
+    
+    private func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    private func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            if incomeSegueIdentifier == "getAdress" { showUserLocation() }
+            break
+        case .denied:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self .showAlert(title: "Your Location is not Availeble",
+                                message: "To give permission Go to: Setting -> StreetPlaces -> Location")
+            }
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            break
+        case .authorizedAlways:
+            break
+        }
+    }
+    
+    private func showUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
         
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
 
@@ -67,5 +139,11 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         return annotationView
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
     }
 }

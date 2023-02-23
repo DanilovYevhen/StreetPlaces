@@ -58,12 +58,7 @@ class NewPlaceViewController: UITableViewController {
             }
         }
     func savePlace() {
-        var image: UIImage?
-        if imageIsChanged {
-            image = placeImage.image
-        } else {
-            image = UIImage(named: "imagePlaceholder")
-        }
+        let image = imageIsChanged ? placeImage.image : UIImage(named: "imagePlaceholder")
         let imageData = image?.pngData()
         let newPlace = Place(name: placeName.text!,
                              location: placeLocation.text,
@@ -113,13 +108,18 @@ class NewPlaceViewController: UITableViewController {
     //MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" {
-            return
+        
+        guard let identifier = segue.identifier,
+              let mapVC = segue.destination as? MapViewController else { return }
+        
+        mapVC.incomeSegueIdentifier = identifier
+        if identifier == "showMap" {
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = placeLocation.text
+            mapVC.place.type = placeType.text!
+            mapVC.place.imageData = placeImage.image?.pngData()
         }
-        let mapVC = segue.destination as! MapViewController
-        mapVC.place = currentPlace
     }
-    
 }
 
 //MARK: - Text field delegate
