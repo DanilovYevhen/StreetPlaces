@@ -9,8 +9,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol MapViewControllerDelegate {
+    func getAddress(_address: String?)
+}
+
 class MapViewController: UIViewController {
     
+    var mapViewControllerDelegate: MapViewControllerDelegate?
     var place: Place!
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
@@ -19,11 +24,11 @@ class MapViewController: UIViewController {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var mapPinImage: UIImageView!
-    @IBOutlet var adressLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
     @IBOutlet var doneButton: UIButton!
     
     override func viewDidLoad() {
-        adressLabel.text = ""
+        addressLabel.text = ""
         mapView.delegate = self
         super.viewDidLoad()
         setupMapView()
@@ -33,6 +38,8 @@ class MapViewController: UIViewController {
         showUserLocation()
     }
     @IBAction func doneButtonPressed() {
+        mapViewControllerDelegate?.getAddress(_address: addressLabel.text)
+        dismiss(animated: true)
     }
     @IBAction func closeVC() {
         dismiss(animated: true)
@@ -41,7 +48,7 @@ class MapViewController: UIViewController {
         if incomeSegueIdentifier == "showMap" {
             setupPlacemark()
             mapPinImage.isHidden = true
-            adressLabel.isHidden = true
+            addressLabel.isHidden = true
             doneButton.isHidden = true  
         }
     }
@@ -73,7 +80,7 @@ class MapViewController: UIViewController {
             checkLocationAuthorization()
             
         } else {
-            //
+            //  
         }
     }
     
@@ -86,7 +93,7 @@ class MapViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
-            if incomeSegueIdentifier == "getAdress" { showUserLocation() }
+            if incomeSegueIdentifier == "getAddress" { showUserLocation() }
             break
         case .denied:
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -164,11 +171,11 @@ extension MapViewController: MKMapViewDelegate {
             
             DispatchQueue.main.async {
                 if streetName != nil && buildNumber != nil {
-                    self .adressLabel.text = "\(streetName!), \(buildNumber!)"
+                    self .addressLabel.text = "\(streetName!), \(buildNumber!)"
                 } else if streetName != nil {
-                    self .adressLabel.text = "\(streetName!)"
+                    self .addressLabel.text = "\(streetName!)"
                 } else {
-                    self .adressLabel.text = ""
+                    self .addressLabel.text = ""
                 }
             }
         }

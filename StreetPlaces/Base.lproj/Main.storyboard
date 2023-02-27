@@ -127,7 +127,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="Placeholder"/>
                                                     <connections>
-                                                        <segue destination="2x7-UC-CaZ" kind="presentation" identifier="getAdress" id="eOK-rK-p3x"/>
+                                                        <segue destination="2x7-UC-CaZ" kind="presentation" identifier="getAddress" id="eOK-rK-p3x"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -256,7 +256,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWl-h6-iXw">
-                                <rect key="frame" x="285" y="665" width="50" height="50"/>
+                                <rect key="frame" x="285" y="605" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Iu3-Vb-vLo"/>
                                     <constraint firstAttribute="height" constant="50" id="mfQ-rD-xCr"/>
@@ -305,7 +305,7 @@
                             <constraint firstItem="KDx-2O-wj9" firstAttribute="trailing" secondItem="Vqd-9W-OC9" secondAttribute="trailing" constant="40" id="N7G-UO-B6c"/>
                             <constraint firstItem="EHJ-7N-csc" firstAttribute="top" secondItem="6cJ-4A-aCy" secondAttribute="top" id="Pke-b1-qDA"/>
                             <constraint firstItem="a90-DP-qrV" firstAttribute="centerY" secondItem="6cJ-4A-aCy" secondAttribute="centerY" constant="-20" id="Sx0-hU-3Us"/>
-                            <constraint firstItem="KDx-2O-wj9" firstAttribute="bottom" secondItem="nWl-h6-iXw" secondAttribute="bottom" constant="40" id="Wa1-kx-m4G"/>
+                            <constraint firstItem="KDx-2O-wj9" firstAttribute="bottom" secondItem="nWl-h6-iXw" secondAttribute="bottom" constant="100" id="Wa1-kx-m4G"/>
                             <constraint firstItem="kOa-dB-Xkh" firstAttribute="centerX" secondItem="6cJ-4A-aCy" secondAttribute="centerX" id="Y88-fy-PlO"/>
                             <constraint firstItem="EHJ-7N-csc" firstAttribute="top" secondItem="irk-OV-uRP" secondAttribute="bottom" constant="-212" id="Z3V-UK-roa"/>
                             <constraint firstItem="KDx-2O-wj9" firstAttribute="bottom" secondItem="kOa-dB-Xkh" secondAttribute="bottom" constant="40" id="gVE-gk-o4s"/>
@@ -314,7 +314,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adressLabel" destination="irk-OV-uRP" id="3Nz-kG-SQw"/>
+                        <outlet property="addressLabel" destination="irk-OV-uRP" id="3Nz-kG-SQw"/>
                         <outlet property="doneButton" destination="kOa-dB-Xkh" id="6nh-Pb-5EZ"/>
                         <outlet property="mapPinImage" destination="a90-DP-qrV" id="cK3-5q-Zhu"/>
                         <outlet property="mapView" destination="EHJ-7N-csc" id="dMO-su-47R"/>
