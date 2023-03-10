@@ -292,11 +292,24 @@
                                     <action selector="doneButtonPressed" destination="2x7-UC-CaZ" eventType="touchUpInside" id="Pub-lR-3DT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie6-AY-kM6">
+                                <rect key="frame" x="162.66666666666666" y="665" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="qKh-OD-NkJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="sLn-lZ-nvu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="2x7-UC-CaZ" eventType="touchUpInside" id="wjB-iC-FJF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KDx-2O-wj9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="a90-DP-qrV" firstAttribute="centerX" secondItem="6cJ-4A-aCy" secondAttribute="centerX" id="1Ck-By-aIO"/>
+                            <constraint firstItem="Ie6-AY-kM6" firstAttribute="centerX" secondItem="6cJ-4A-aCy" secondAttribute="centerX" id="1LX-sW-kJC"/>
                             <constraint firstAttribute="bottom" secondItem="EHJ-7N-csc" secondAttribute="bottom" id="41m-3j-CoD"/>
                             <constraint firstItem="EHJ-7N-csc" firstAttribute="trailing" secondItem="KDx-2O-wj9" secondAttribute="trailing" id="7HW-gg-6C1"/>
                             <constraint firstItem="EHJ-7N-csc" firstAttribute="leading" secondItem="KDx-2O-wj9" secondAttribute="leading" id="9CT-6d-TS9"/>
@@ -308,6 +321,7 @@
                             <constraint firstItem="KDx-2O-wj9" firstAttribute="bottom" secondItem="nWl-h6-iXw" secondAttribute="bottom" constant="100" id="Wa1-kx-m4G"/>
                             <constraint firstItem="kOa-dB-Xkh" firstAttribute="centerX" secondItem="6cJ-4A-aCy" secondAttribute="centerX" id="Y88-fy-PlO"/>
                             <constraint firstItem="EHJ-7N-csc" firstAttribute="top" secondItem="irk-OV-uRP" secondAttribute="bottom" constant="-212" id="Z3V-UK-roa"/>
+                            <constraint firstItem="KDx-2O-wj9" firstAttribute="bottom" secondItem="Ie6-AY-kM6" secondAttribute="bottom" constant="40" id="cRZ-cm-Src"/>
                             <constraint firstItem="KDx-2O-wj9" firstAttribute="bottom" secondItem="kOa-dB-Xkh" secondAttribute="bottom" constant="40" id="gVE-gk-o4s"/>
                             <constraint firstItem="KDx-2O-wj9" firstAttribute="trailing" secondItem="irk-OV-uRP" secondAttribute="trailing" constant="16" id="vcg-6q-hry"/>
                             <constraint firstItem="irk-OV-uRP" firstAttribute="leading" secondItem="KDx-2O-wj9" secondAttribute="leading" constant="16" id="z6e-fS-vQx"/>
@@ -316,6 +330,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="irk-OV-uRP" id="3Nz-kG-SQw"/>
                         <outlet property="doneButton" destination="kOa-dB-Xkh" id="6nh-Pb-5EZ"/>
+                        <outlet property="goButton" destination="Ie6-AY-kM6" id="6Rn-EH-nr0"/>
                         <outlet property="mapPinImage" destination="a90-DP-qrV" id="cK3-5q-Zhu"/>
                         <outlet property="mapView" destination="EHJ-7N-csc" id="dMO-su-47R"/>
                     </connections>
@@ -491,6 +506,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
         <image name="Pin" width="40" height="40"/>
         <image name="Placeholder" width="20" height="20"/>

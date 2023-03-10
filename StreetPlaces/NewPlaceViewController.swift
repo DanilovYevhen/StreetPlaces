@@ -20,6 +20,7 @@ class NewPlaceViewController: UITableViewController {
     @IBOutlet var placeLocation: UITextField!
     
     @IBOutlet var ratingControl: RatingControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: CGRect(x: 0,
@@ -112,7 +113,7 @@ class NewPlaceViewController: UITableViewController {
         guard let identifier = segue.identifier,
               let mapVC = segue.destination as? MapViewController else { return }
         
-        mapVC.incomeSegueIdentifier = identifier
+        mapVC.segueIdentifier = identifier
         mapVC.mapViewControllerDelegate = self
         if identifier == "showMap" {
             mapVC.place.name = placeName.text!
